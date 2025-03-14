@@ -1,16 +1,22 @@
 import streamlit as st
 import joblib
-import numpy as np
+import os
 
-# Load the trained Decision Tree model
-model = joblib.load("decision_tree_model.pkl")
+# Ensure the model file exists before loading
+model_path = "decision_tree_model.pkl"
+
+if not os.path.exists(model_path):
+    st.error(f"Error: Model file '{model_path}' not found. Ensure it is uploaded to Streamlit Cloud.")
+else:
+    model = joblib.load(model_path)
+    st.success("Model loaded successfully!")
 
 # Streamlit App Title
 st.title("Decision Tree Model Deployment")
 
 st.write("Enter feature values to get predictions:")
 
-# Define the number of features (Change this based on your dataset)
+# Define the number of features (Update based on your dataset)
 num_features = 5  # Adjust according to your dataset
 
 # Create input fields dynamically
