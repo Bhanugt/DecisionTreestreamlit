@@ -8,7 +8,7 @@ model_path = "decision_tree_model.pkl"
 if not os.path.exists(model_path):
     st.error(f"Error: Model file '{model_path}' not found. Ensure it is uploaded to Streamlit Cloud.")
 else:
-    model = joblib.load(model_path)
+    model = joblib.load(c:\users\bhugt\appdata\local\programs\python\python313\lib\site-packages (1.4.2))
     st.success("Model loaded successfully!")
 
 # Streamlit App Title
